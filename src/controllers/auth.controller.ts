@@ -12,7 +12,7 @@ export class AuthController {
         if (!user ) {
             return res.status(400).json({
                 error: {
-                    message: 'Email or Password bad'
+                    message: 'Email or Password is wrong'
                 }
             })
         }
