@@ -6,6 +6,7 @@ import { notFound } from './errors/notfound'
 import { userRouter } from './routes/user.route'
 import { authRouter } from './routes/auth.route'
 import { postRouter } from './routes/post.route'
+import { commentRouter } from './routes/comment.route'
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(cors())
 app.use('/api/user', userRouter)
 app.use('/api/', authRouter)
 app.use('/api/post', postRouter)
+app.use('/api/comment', commentRouter)
 
 app.use(notFound)
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {
