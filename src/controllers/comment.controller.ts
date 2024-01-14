@@ -21,6 +21,9 @@ export const addComment = async (req: Request, res: Response) => {
 
 export const getAllCommentPost = async (req: Request, res: Response) => {
     const comments = await db.comments.findMany({
+        where: {
+            post_id: Number(req.params.post_id)
+        },
         select: {
             content: true,
             create_at: true,

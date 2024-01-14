@@ -5,5 +5,6 @@ import { commentValidate } from '../middlewares/comment.middleware'
 
 const commentRouter = Router()
 commentRouter.post('/:post_id', userAuth, commentValidate, commentController.addComment)
-commentRouter.get('/', commentController.getAllCommentPost)
+commentRouter.get('/:post_id', commentController.getAllCommentPost)
+
 export { commentRouter }
